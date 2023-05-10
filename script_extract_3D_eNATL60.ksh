@@ -1,5 +1,6 @@
 #!/bin/bash
 
+
 REG=$1
 CASE=$2
 FREQ=$3
@@ -23,6 +24,7 @@ case $REG in
 	OSMOSISb) coord='-d x,4424,4831 -d y,2630,3535'; sREG=OSMOb;;
 	EOSMO) coord='-d x,4461,5340 -d y,2333,3895'; sREG=EOSMO;;
 	EGULF) coord='-d x,1464,3106 -d y,1478,2774'; sREG=EGULF;;
+	GULF) coord='-d x,1915,2653 -d y,1654,2581'; sREG=GULF;;
 	OSMOSISc) coord='-d x,4879,4879 -d y,2944,2944'; sREG=OSMOSISc;;
 	MOMAR) coord='-d x,3938,3938 -d y,2028,2028'; sREG=MOMAR;;
 	SICIL) coord='-d x,6352,6935 -d y,1656,2311'; sREG=SICIL;;
@@ -86,9 +88,9 @@ for var in $VAR; do
 		if [ ! -f  $fileo ]; then 
 			echo $fileo 
 			if [ ! -z $LEV1 ]; then
-				ncks -O -F $coord -d $dimZ,$indZ1,$indZ2 -v ${var} $file $fileo
+				/lus/home/CT1/ige2071/aalbert/.conda/envs/nco/bin/ncks -O -F $coord -d $dimZ,$indZ1,$indZ2 -v ${var} $file $fileo
 			else
-				ncks -O -F $coord -v ${var} $file $fileo
+			/lus/home/CT1/ige2071/aalbert/.conda/envs/nco/bin/ncks -O -F $coord -v ${var} $file $fileo
 			fi
 		fi
 

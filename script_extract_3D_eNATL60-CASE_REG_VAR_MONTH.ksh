@@ -23,6 +23,7 @@ for day in $(seq $day1 $day2); do
 	mm=$(printf "%02d" $monthi)
         dd=$(printf "%02d" $day)
 	date=${year}${mm}${dd}
+	echo $date
 
-	./script_extract_3D_eNATL60.ksh REG CASE 1h VAR ${date}
+	./script_extract_3D_eNATL60.ksh REG CASE 1h VAR ${date} LEVS
 done
